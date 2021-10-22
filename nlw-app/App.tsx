@@ -1,11 +1,15 @@
 import React from 'react'
-import {Home} from './src/screens/Home'
+
+
 
 import {
   useFonts,
   Roboto_400Regular,
   Roboto_700Bold
 } from '@expo-google-fonts/roboto'
+
+import {Home} from './src/screens/Home'
+import {AuthProvider} from './src/hooks/auth'
 
 import AppLoading from 'expo-app-loading'
 import {StatusBar} from 'expo-status-bar'
@@ -21,10 +25,14 @@ export default function App() {
   }
 
   return (
-    <>
-      <StatusBar style="light"/>
+    <AuthProvider>
+      <StatusBar 
+      style="light"
+      translucent
+      backgroundColor='transparent'
+      />
       <Home/>
-    </>
+    </AuthProvider>
   );
 }
 
