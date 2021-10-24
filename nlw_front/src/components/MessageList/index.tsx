@@ -4,6 +4,7 @@ import io from 'socket.io-client'
 
 import logoImg from "../../assets/logo.svg"
 import { useEffect, useState } from 'react'
+import { LikeButton } from '../ButtonLike'
 
 
 type Message = {
@@ -61,7 +62,8 @@ export function MessageList(){
                       <div className={styles.userImage}>
                         <img src={message.user.avatar_url} alt={message.user.name} />
                       </div>
-                        <span>{message.user.name} </span>
+                        <span>{message.user.name} </span> 
+                        <LikeButton/>
                     </div>
                 </li>
           );
